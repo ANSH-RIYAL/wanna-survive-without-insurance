@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Tourism India - Backend Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c5aa0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 10px;
+        }
+        .procedure-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .hospital-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #f0f8ff;
+        }
+        .cost-comparison {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #2c5aa0;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1e3f7a;
+        }
+        .api-status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .loading {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .planner-result {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Medical Tourism India - Backend Test</h1>
+        
+        <!-- API Status -->
+        <div class="section">
+            <h2>API Status</h2>
+            <div id="apiStatus" class="api-status loading">Checking API connection...</div>
+        </div>
+
+        <!-- API Stats -->
+        <div class="section">
+            <h2>API Statistics</h2>
+            <div id="apiStats"></div>
+        </div>
+
+        <!-- Procedures -->
+        <div class="section">
+            <h2>Available Procedures</h2>
+            <div id="proceduresList"></div>
+        </div>
+
+        <!-- Hospitals -->
+        <div class="section">
+            <h2>Hospitals in Delhi</h2>
+            <div id="hospitalsList"></div>
+        </div>
+
+        <!-- Travel Info -->
+        <div class="section">
+            <h2>Travel Information</h2>
+            <div id="travelInfo"></div>
+        </div>
+
+        <!-- Planner Generator -->
+        <div class="section">
+            <h2>Generate Personal Planner</h2>
+            <form id="plannerForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="procedure">Procedure:</label>
+                    <select id="procedure" name="procedure" required>
+                        <option value="">Select a procedure</option>
+                        <option value="heart-bypass">Heart Bypass Surgery</option>
+                        <option value="dental-implants">Dental Implants</option>
+                        <option value="spine-surgery">Spine Surgery</option>
+                        <option value="ivf">IVF Treatment</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="travelDates">Travel Dates:</label>
+                    <input type="text" id="travelDates" name="travelDates" placeholder="e.g., March 15-30, 2024" required>
+                </div>
+                <div class="form-group">
+                    <label for="budgetRange">Budget Range:</label>
+                    <select id="budgetRange" name="budgetRange" required>
+                        <option value="">Select budget range</option>
+                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                        <option value="$10,000 - $15,000">$10,000 - $15,000</option>
+                        <option value="$15,000 - $20,000">$15,000 - $20,000</option>
+                        <option value="$20,000+">$20,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="specialRequirements">Special Requirements (Optional):</label>
+                    <textarea id="specialRequirements" name="specialRequirements" rows="3"></textarea>
+                </div>
+                <button type="submit">Generate Planner</button>
+            </form>
+            <div id="plannerResult"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000/api';
+
+        // Check API status
+        async function checkApiStatus() {
+            try {
+                const response = await fetch('http://localhost:8000/');
+                const data = await response.json();
+                document.getElementById('apiStatus').innerHTML = 
+                    `<strong>✅ API Connected:</strong> ${data.message} (v${data.version})`;
+                document.getElementById('apiStatus').className = 'api-status success';
+            } catch (error) {
+                document.getElementById('apiStatus').innerHTML = 
+                    `<strong>❌ API Error:</strong> ${error.message}`;
+                document.getElementById('apiStatus').className = 'api-status error';
+            }
+        }
+
+        // Load API stats
+        async function loadApiStats() {
+            try {
+                const response = await fetch(`${API_BASE}/stats`);
+                const data = await response.json();
+                
+                const statsHtml = `
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">${data.total_hospitals}</div>
+                            <div>Total Hospitals</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">${data.total_procedures}</div>
+                            <div>Available Procedures</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">${data.hospitals_by_location.Delhi}</div>
+                            <div>Hospitals in Delhi</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">${data.hospitals_by_location.Gurgaon}</div>
+                            <div>Hospitals in Gurgaon</div>
+                        </div>
+                    </div>
+                `;
+                
+                document.getElementById('apiStats').innerHTML = statsHtml;
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        // Load procedures
+        async function loadProcedures() {
+            try {
+                const response = await fetch(`${API_BASE}/procedures`);
+                const data = await response.json();
+                
+                const proceduresHtml = data.procedures.map(procedure => `
+                    <div class="procedure-card">
+                        <h3>${procedure.name}</h3>
+                        <p><strong>Description:</strong> ${procedure.description}</p>
+                        <div class="cost-comparison">
+                            <p><strong>U.S. Cost:</strong> ${procedure.us_cost_range}</p>
+                            <p><strong>India Cost:</strong> ${procedure.india_cost_range}</p>
+                            <p><strong>Savings:</strong> ${procedure.savings_percentage}</p>
+                            <p><strong>Duration in India:</strong> ${procedure.duration_in_india}</p>
+                        </div>
+                        <p><strong>Recovery Time:</strong> ${procedure.recovery_time}</p>
+                        <p><strong>Steps:</strong> ${procedure.steps.length} steps in the process</p>
+                    </div>
+                `).join('');
+                
+                document.getElementById('proceduresList').innerHTML = proceduresHtml;
+            } catch (error) {
+                console.error('Error loading procedures:', error);
+            }
+        }
+
+        // Load hospitals
+        async function loadHospitals() {
+            try {
+                const response = await fetch(`${API_BASE}/hospitals`);
+                const data = await response.json();
+                
+                const hospitalsHtml = data.hospitals.map(hospital => `
+                    <div class="hospital-card">
+                        <h3>${hospital.name}</h3>
+                        <p><strong>Location:</strong> ${hospital.location}</p>
+                        <p><strong>Address:</strong> ${hospital.address}</p>
+                        <p><strong>Phone:</strong> ${hospital.phone}</p>
+                        <p><strong>Email:</strong> ${hospital.email}</p>
+                        <p><strong>Website:</strong> <a href="${hospital.website}" target="_blank">${hospital.website}</a></p>
+                        <p><strong>Estimated Cost:</strong> ${hospital.estimated_cost_range}</p>
+                        <p><strong>Procedures:</strong> ${hospital.procedures.join(', ')}</p>
+                        <p><strong>Accreditations:</strong> ${hospital.accreditations.join(', ')}</p>
+                    </div>
+                `).join('');
+                
+                document.getElementById('hospitalsList').innerHTML = hospitalsHtml;
+            } catch (error) {
+                console.error('Error loading hospitals:', error);
+            }
+        }
+
+        // Load travel info
+        async function loadTravelInfo() {
+            try {
+                const response = await fetch(`${API_BASE}/travel`);
+                const data = await response.json();
+                
+                const travelHtml = `
+                    <div class="cost-comparison">
+                        <h3>Cost Breakdown</h3>
+                        <p><strong>Visa Cost:</strong> ${data.visa_cost}</p>
+                        <p><strong>Processing Time:</strong> ${data.processing_time}</p>
+                        <p><strong>Flight Cost:</strong> ${data.flight_average_cost}</p>
+                        <p><strong>Accommodation:</strong> ${data.accommodation_cost_range}</p>
+                        <p><strong>Local Transport:</strong> ${data.local_transport_cost}</p>
+                    </div>
+                    <div>
+                        <h3>Emergency Contacts</h3>
+                        ${Object.entries(data.emergency_contacts).map(([key, value]) => 
+                            `<p><strong>${key}:</strong> ${value}</p>`
+                        ).join('')}
+                    </div>
+                `;
+                
+                document.getElementById('travelInfo').innerHTML = travelHtml;
+            } catch (error) {
+                console.error('Error loading travel info:', error);
+            }
+        }
+
+        // Handle planner generation
+        document.getElementById('plannerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const plannerData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                procedure: formData.get('procedure'),
+                travel_dates: formData.get('travelDates'),
+                budget_range: formData.get('budgetRange'),
+                special_requirements: formData.get('specialRequirements') || null
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/generate-planner`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(plannerData)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    const resultHtml = `
+                        <div class="planner-result">
+                            <h3>🎉 Personal Medical Tourism Planner Generated!</h3>
+                            <p><strong>Generated for:</strong> ${data.user_info.name} (${data.user_info.email})</p>
+                            <p><strong>Procedure:</strong> ${data.procedure.name}</p>
+                            <p><strong>Travel Dates:</strong> ${data.user_info.travel_dates}</p>
+                            <p><strong>Budget Range:</strong> ${data.user_info.budget_range}</p>
+                            
+                            <h4>Cost Summary:</h4>
+                            <ul>
+                                <li><strong>Procedure Cost:</strong> ${data.total_estimated_cost.procedure_cost}</li>
+                                <li><strong>Travel Cost:</strong> ${data.total_estimated_cost.travel_cost}</li>
+                                <li><strong>Accommodation:</strong> ${data.total_estimated_cost.accommodation_cost}</li>
+                                <li><strong>Visa Cost:</strong> ${data.total_estimated_cost.visa_cost}</li>
+                            </ul>
+                            
+                            <h4>Recommended Hospitals (${data.hospitals.length} found):</h4>
+                            <ul>
+                                ${data.hospitals.map(h => `<li>${h.name} - ${h.estimated_cost_range}</li>`).join('')}
+                            </ul>
+                            
+                            <p><strong>Generated on:</strong> ${data.generated_date}</p>
+                            
+                            <button onclick="downloadPlannerData()">Download Planner Data (JSON)</button>
+                        </div>
+                    `;
+                    
+                    document.getElementById('plannerResult').innerHTML = resultHtml;
+                    
+                    // Store data for download
+                    window.plannerData = data;
+                } else {
+                    alert('Error generating planner');
+                }
+            } catch (error) {
+                console.error('Error generating planner:', error);
+                alert('Error generating planner');
+            }
+        });
+
+        // Download planner data as JSON
+        function downloadPlannerData() {
+            if (window.plannerData) {
+                const dataStr = JSON.stringify(window.plannerData, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = window.URL.createObjectURL(dataBlob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `medical_tourism_planner_${window.plannerData.user_info.name.replace(' ', '_')}.json`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            }
+        }
+
+        // Initialize page
+        window.addEventListener('load', () => {
+            checkApiStatus();
+            loadApiStats();
+            loadProcedures();
+            loadHospitals();
+            loadTravelInfo();
+        });
+    </script>
+</body>
+</html> 

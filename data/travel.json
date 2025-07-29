@@ -1,0 +1,67 @@
+{
+  "visa_requirements": [
+    "Valid U.S. passport with 6 months validity",
+    "Completed online visa application form",
+    "Recent passport-size photographs",
+    "Hospital appointment confirmation letter",
+    "Doctor referral letter from U.S. physician",
+    "Medical reports and treatment plan",
+    "Proof of financial means",
+    "Travel insurance (recommended)"
+  ],
+  "visa_cost": "$150 - $250",
+  "processing_time": "3-7 business days",
+  "flight_average_cost": "$800 - $1,200 roundtrip",
+  "accommodation_cost_range": "$40 - $150 per night",
+  "local_transport_cost": "$10 - $50 per day",
+  "emergency_contacts": {
+    "U.S. Embassy Delhi": "+91-11-2419-8000",
+    "U.S. Consulate Mumbai": "+91-22-2672-4000",
+    "U.S. Consulate Kolkata": "+91-33-3984-2400",
+    "U.S. Consulate Chennai": "+91-44-2857-4000",
+    "U.S. Consulate Hyderabad": "+91-40-6672-4000",
+    "Delhi Police": "100",
+    "Ambulance": "102",
+    "Fire Department": "101",
+    "Tourist Helpline": "1363",
+    "Medical Tourism Helpline": "+91-11-2301-1111"
+  },
+  "useful_links": {
+    "Indian Visa Application": "https://indianvisaonline.gov.in/visa/tvoa.html",
+    "U.S. Embassy India": "https://in.usembassy.gov/",
+    "Delhi Tourism": "https://delhitourism.gov.in/",
+    "MakeMyTrip (Flights)": "https://www.makemytrip.com/",
+    "Booking.com (Hotels)": "https://www.booking.com/",
+    "Delhi Metro": "https://www.delhimetrorail.com/",
+    "Uber India": "https://www.uber.com/in/en/",
+    "Ola Cabs": "https://www.olacabs.com/"
+  },
+  "monthly_flight_costs": {
+    "January": "$900 - $1,300",
+    "February": "$850 - $1,200",
+    "March": "$800 - $1,150",
+    "April": "$750 - $1,100",
+    "May": "$700 - $1,000",
+    "June": "$650 - $950",
+    "July": "$700 - $1,000",
+    "August": "$750 - $1,100",
+    "September": "$800 - $1,150",
+    "October": "$850 - $1,200",
+    "November": "$900 - $1,300",
+    "December": "$1,000 - $1,500"
+  },
+  "accommodation_options": {
+    "Budget Hotels": "$20 - $60 per night",
+    "Mid-range Hotels": "$60 - $120 per night",
+    "Luxury Hotels": "$120 - $300 per night",
+    "Hospital Guest Houses": "$30 - $80 per night",
+    "Serviced Apartments": "$80 - $200 per night"
+  },
+  "transportation_options": {
+    "Delhi Metro": "$0.50 - $2 per trip",
+    "Auto Rickshaw": "$2 - $10 per trip",
+    "Uber/Ola": "$5 - $25 per trip",
+    "Taxi": "$10 - $50 per trip",
+    "Airport Transfer": "$15 - $40"
+  }
+} 

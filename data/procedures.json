@@ -1,0 +1,250 @@
+[
+  {
+    "id": "heart-bypass",
+    "name": "Coronary Artery Bypass Graft (CABG)",
+    "description": "Heart bypass surgery to improve blood flow to the heart by creating new pathways around blocked arteries.",
+    "us_cost_range": "$70,000 - $200,000",
+    "india_cost_range": "$6,000 - $15,000",
+    "savings_percentage": "90-95%",
+    "duration_in_india": "2-3 weeks",
+    "recovery_time": "6-12 weeks",
+    "steps": [
+      {
+        "title": "Get Diagnosis in U.S.",
+        "description": "Visit cardiologist for stress test, EKG, and angiogram to confirm blockages. Get all medical reports and imaging.",
+        "link": "https://www.heart.org/en/health-topics/heart-attack/diagnosing-a-heart-attack"
+      },
+      {
+        "title": "Choose Hospital in India",
+        "description": "Contact top cardiac hospitals in Delhi. Share your medical reports for cost estimate and appointment scheduling.",
+        "link": "https://www.indianembassyusa.gov.in/pages/MT"
+      },
+      {
+        "title": "Apply for Medical Visa",
+        "description": "Apply for Indian medical visa online. Upload passport, hospital appointment, and doctor referral letter.",
+        "link": "https://indianvisaonline.gov.in/visa/tvoa.html"
+      },
+      {
+        "title": "Book Travel & Accommodation",
+        "description": "Book roundtrip flights to Delhi. Arrange accommodation near hospital. Notify hospital of arrival date.",
+        "link": "https://www.makemytrip.com/"
+      },
+      {
+        "title": "Pre-Op & Surgery",
+        "description": "Arrive 2-3 days before surgery. Complete pre-op tests. Undergo CABG surgery with 1-2 days ICU stay.",
+        "link": null
+      },
+      {
+        "title": "Recovery & Return",
+        "description": "5-7 days hospital stay. Post-op care and physiotherapy. Return to U.S. after 2 weeks total.",
+        "link": null
+      }
+    ],
+    "requirements": [
+      "Valid U.S. passport",
+      "Medical reports from U.S. cardiologist",
+      "Angiogram results",
+      "Blood test reports",
+      "Hospital appointment confirmation",
+      "Medical visa approval",
+      "Travel insurance (recommended)",
+      "Emergency contact information"
+    ],
+    "risks": [
+      "Infection at incision site",
+      "Bleeding during or after surgery",
+      "Irregular heart rhythms",
+      "Kidney problems",
+      "Memory loss or confusion",
+      "Blood clots",
+      "Stroke (rare)",
+      "Death (very rare, <1%)"
+    ]
+  },
+  {
+    "id": "dental-implants",
+    "name": "Dental Implants & Full Mouth Reconstruction",
+    "description": "Complete dental restoration using titanium implants to replace missing teeth with natural-looking prosthetics.",
+    "us_cost_range": "$20,000 - $50,000",
+    "india_cost_range": "$2,000 - $8,000",
+    "savings_percentage": "85-90%",
+    "duration_in_india": "1-2 weeks",
+    "recovery_time": "3-6 months",
+    "steps": [
+      {
+        "title": "Dental Consultation in U.S.",
+        "description": "Visit dentist for X-rays, CT scan, and treatment plan. Get all dental records and imaging.",
+        "link": "https://www.ada.org/en/resources/research/science-and-research-institute/oral-health-topics/dental-implants"
+      },
+      {
+        "title": "Select Dental Clinic",
+        "description": "Choose accredited dental clinic in Delhi. Share dental records for treatment plan and cost estimate.",
+        "link": "https://www.delhidentalcentre.com"
+      },
+      {
+        "title": "Apply for Medical Visa",
+        "description": "Apply for Indian medical visa with dental clinic appointment confirmation and treatment plan.",
+        "link": "https://indianvisaonline.gov.in/visa/tvoa.html"
+      },
+      {
+        "title": "Travel to India",
+        "description": "Book flights to Delhi. Arrange accommodation near dental clinic. Schedule consultation appointment.",
+        "link": "https://www.makemytrip.com/"
+      },
+      {
+        "title": "Dental Treatment",
+        "description": "Initial consultation and treatment planning. Implant placement surgery. Temporary prosthetics.",
+        "link": null
+      },
+      {
+        "title": "Follow-up & Return",
+        "description": "Post-op care and instructions. Schedule follow-up visits. Return to U.S. with temporary teeth.",
+        "link": null
+      }
+    ],
+    "requirements": [
+      "Valid U.S. passport",
+      "Dental X-rays and CT scans",
+      "Treatment plan from U.S. dentist",
+      "Medical history",
+      "Dental clinic appointment",
+      "Medical visa approval",
+      "Travel insurance",
+      "Emergency dental contact"
+    ],
+    "risks": [
+      "Infection at implant site",
+      "Nerve damage",
+      "Sinus problems (upper jaw)",
+      "Implant failure",
+      "Bone loss around implant",
+      "Allergic reactions",
+      "Gum recession",
+      "Bite problems"
+    ]
+  },
+  {
+    "id": "spine-surgery",
+    "name": "Spinal Surgery (Discectomy, Laminectomy, Fusion)",
+    "description": "Surgical procedures to treat spinal conditions including herniated discs, spinal stenosis, and degenerative disc disease.",
+    "us_cost_range": "$50,000 - $150,000",
+    "india_cost_range": "$5,000 - $12,000",
+    "savings_percentage": "90-95%",
+    "duration_in_india": "2-3 weeks",
+    "recovery_time": "3-6 months",
+    "steps": [
+      {
+        "title": "Spine Evaluation in U.S.",
+        "description": "Visit spine specialist for MRI, CT scan, and nerve conduction studies. Get complete diagnostic reports.",
+        "link": "https://www.spine.org/KnowYourBack/Conditions"
+      },
+      {
+        "title": "Choose Spine Center",
+        "description": "Select accredited spine surgery center in Delhi. Share imaging and reports for surgical plan.",
+        "link": "https://www.maxhealthcare.in/speciality/spine-surgery"
+      },
+      {
+        "title": "Medical Visa Application",
+        "description": "Apply for Indian medical visa with spine center appointment and surgical recommendation.",
+        "link": "https://indianvisaonline.gov.in/visa/tvoa.html"
+      },
+      {
+        "title": "Travel Arrangements",
+        "description": "Book flights to Delhi. Arrange accommodation with accessibility features. Plan post-surgery care.",
+        "link": "https://www.makemytrip.com/"
+      },
+      {
+        "title": "Surgery & Recovery",
+        "description": "Pre-op evaluation. Spinal surgery procedure. Post-op care and physical therapy.",
+        "link": null
+      },
+      {
+        "title": "Rehabilitation & Return",
+        "description": "Inpatient rehabilitation. Discharge planning. Return to U.S. with recovery instructions.",
+        "link": null
+      }
+    ],
+    "requirements": [
+      "Valid U.S. passport",
+      "MRI and CT scan reports",
+      "Spine specialist consultation",
+      "Surgical recommendation",
+      "Medical history",
+      "Hospital appointment",
+      "Medical visa approval",
+      "Travel insurance with medical coverage"
+    ],
+    "risks": [
+      "Infection",
+      "Bleeding",
+      "Nerve damage",
+      "Dural tear (spinal fluid leak)",
+      "Hardware failure",
+      "Failed fusion",
+      "Adjacent segment disease",
+      "Chronic pain"
+    ]
+  },
+  {
+    "id": "ivf",
+    "name": "In Vitro Fertilization (IVF) Treatment",
+    "description": "Assisted reproductive technology to help couples conceive through egg retrieval, fertilization, and embryo transfer.",
+    "us_cost_range": "$15,000 - $30,000 per cycle",
+    "india_cost_range": "$2,500 - $6,000 per cycle",
+    "savings_percentage": "80-85%",
+    "duration_in_india": "2-4 weeks",
+    "recovery_time": "2-4 weeks",
+    "steps": [
+      {
+        "title": "Fertility Consultation in U.S.",
+        "description": "Visit fertility specialist for evaluation. Complete hormone tests, ultrasound, and fertility assessment.",
+        "link": "https://www.resolve.org/get-help/find-a-provider/"
+      },
+      {
+        "title": "Select IVF Clinic",
+        "description": "Choose accredited IVF center in Delhi. Share fertility reports for treatment plan and success rates.",
+        "link": "https://www.novaivf.com"
+      },
+      {
+        "title": "Medical Visa Process",
+        "description": "Apply for Indian medical visa with IVF clinic appointment and fertility treatment plan.",
+        "link": "https://indianvisaonline.gov.in/visa/tvoa.html"
+      },
+      {
+        "title": "Travel to India",
+        "description": "Book flights to Delhi. Arrange accommodation near IVF clinic. Schedule initial consultation.",
+        "link": "https://www.makemytrip.com/"
+      },
+      {
+        "title": "IVF Treatment Cycle",
+        "description": "Ovarian stimulation. Egg retrieval. Fertilization and embryo culture. Embryo transfer.",
+        "link": null
+      },
+      {
+        "title": "Follow-up & Pregnancy Test",
+        "description": "Post-transfer care. Pregnancy test after 2 weeks. Return to U.S. with results.",
+        "link": null
+      }
+    ],
+    "requirements": [
+      "Valid U.S. passport",
+      "Fertility evaluation reports",
+      "Hormone test results",
+      "Medical history",
+      "IVF clinic appointment",
+      "Medical visa approval",
+      "Travel insurance",
+      "Emergency contact information"
+    ],
+    "risks": [
+      "Ovarian hyperstimulation syndrome",
+      "Multiple pregnancy",
+      "Ectopic pregnancy",
+      "Ovarian torsion",
+      "Infection",
+      "Bleeding",
+      "Anesthesia risks",
+      "Emotional stress"
+    ]
+  }
+] 
